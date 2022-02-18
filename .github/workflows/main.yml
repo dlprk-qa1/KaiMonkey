@@ -18,7 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
           client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
-          soft_build : 'true'
+          fail_build : 'true'
           output_format : 'human+sarif'
           region : 'CUSTOM'
       - name: Upload SARIF file
