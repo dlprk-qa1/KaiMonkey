@@ -19,7 +19,7 @@ jobs:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
           client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
           fail_build : 'true'
-          output_format : 'human+sarif'
+          output_format : 'human+github_sarif'
           region : 'CUSTOM'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
