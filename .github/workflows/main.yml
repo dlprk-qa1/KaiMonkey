@@ -17,8 +17,8 @@ jobs:
         id : iac-scan
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
-          client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
+          client_id : ${{ secrets.ZSCANNER_INT_CLIENTID }}
+          client_secret : ${{ secrets.ZSCANNER_INT_SECRET }}
           fail_build : 'true'
           output_format : 'human+github-sarif'
           region : 'CUSTOM'
