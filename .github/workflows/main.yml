@@ -7,7 +7,7 @@ on:
 env :
   API_URL : "https://main.dev.api.zscwp.io"
   AUTH_URL : "https://zscaler-poc.us.auth0.com"
-  CLI_VERSION : "7ce8d31"
+  CLI_VERSION : "07eb55a"
 jobs:
   test:
     runs-on: ubuntu-latest
