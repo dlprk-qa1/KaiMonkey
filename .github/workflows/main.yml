@@ -5,9 +5,9 @@ on:
     types: [opened]
   workflow_dispatch :
 env :
-  API_URL : "https://int.api.zscwp.io"
+  API_URL : "https://main.dev.api.zscwp.io"
   AUTH_URL : "https://zscaler-poc.us.auth0.com"
-  CLI_VERSION : "69f971e"
+  CLI_VERSION : "7ce8d31"
 jobs:
   test:
     runs-on: ubuntu-latest
