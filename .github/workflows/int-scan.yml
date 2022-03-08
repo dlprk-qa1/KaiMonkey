@@ -7,7 +7,7 @@ on:
 env :
   API_URL : "https://int.api.zscwp.io"
   AUTH_URL : "https://z-cwp-int.us.auth0.com"
-  CLI_VERSION : "6da23f2"
+  CLI_VERSION : "e101670"
 jobs:
   test:
     runs-on: ubuntu-latest
