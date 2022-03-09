@@ -15,7 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses : ZscalerCWP/Zscaler-IaC-Action@main
         id : iac-scan
-        continue-on-error: true
         with:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
@@ -23,8 +22,10 @@ jobs:
           fail_build : 'true'
           output_format : 'human+github-sarif'
           region : 'CUSTOM'
+          log_level : 'debug'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
+        if: ${{ success() || failure() && (steps.iac-scan.outputs.sarif_file_path != '') }}
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: ${{ steps.iac-scan.outputs.sarif_file_path }}
