@@ -10,7 +10,7 @@ env :
   CLI_VERSION : "07eb55a"
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses : ZscalerCWP/Zscaler-IaC-Action@main
