@@ -1,4 +1,4 @@
-name: Int Scan
+name: IntScan
 
 on:
   pull_request:
