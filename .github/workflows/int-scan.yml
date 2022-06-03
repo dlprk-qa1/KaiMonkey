@@ -15,7 +15,7 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v2
-      - uses : ZscalerCWP/Zscaler-IaC-Action@CWP-10030
+      - uses : ZscalerCWP/Zscaler-IaC-Action
         id : iac-scan
         with:
           client_id : ${{ secrets.ZSCANNER_INT_CLIENTID }}
