@@ -1,5 +1,4 @@
-name: Int Scan
-
+name: Test
 on:
   pull_request:
     types: [opened]
@@ -9,19 +8,17 @@ env :
   AUTH_URL : "https://z-cwp-int.us.auth0.com"
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses : ZscalerCWP/Zscaler-IaC-Action@0.3.8
+      - uses : ZscalerCWP/Zscaler-IaC-Action@v0.3.1
         id : iac-scan
         with:
-          client_id : ${{ secrets.ZSCANNER_INT_CLIENTID }}
-          client_secret : ${{ secrets.ZSCANNER_INT_SECRET }}
-          region : 'CUSTOM'
+          client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
+          client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
+          fail_build : 'true'
           output_format : 'human+github-sarif'
+          region : 'CUSTOM'
           log_level : 'debug'
       - run : echo ${{ steps.iac-scan.outputs.sarif_file_path }}
       - name: Upload SARIF file
